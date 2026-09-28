@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+  <title>FitBuddy | AI Fitness Planner</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<div class="container">
+  <div class="hero">
+    <div class="badge">AI FITNESS PLANNER</div>
+    <h1>FitBuddy</h1>
+    <p>Create a personalized 7-day fitness plan with Gemini AI.</p>
+  </div>
+
+  <div class="card">
+    <h2>Tell us about you</h2>
+    <form method="post" action="/generate">
+      <label>Name</label><input name="name" required>
+
+      <label>Age</label><input name="age" type="number" min="13" max="100" required>
+
+      <label>Weight (kg)</label><input name="weight" type="number" step="0.1" min="20" max="300" required>
+
+      <label>Fitness Goal</label>
+      <select name="goal">
+        <option>Weight loss</option>
+        <option>Muscle gain</option>
+        <option>General wellness</option>
+      </select>
+
+      <label>Workout Intensity</label>
+      <select name="intensity">
+        <option>Low</option>
+        <option>Medium</option>
+        <option>High</option>
+      </select>
+
+      <button type="submit">Generate My Plan ✨</button>
+    </form>
+  </div>
+
+  <p class="disclaimer">General fitness information only. Not a substitute for professional medical advice.</p>
+</div>
+</body>
+</html>

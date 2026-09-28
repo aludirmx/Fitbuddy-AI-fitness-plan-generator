@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+  <title>FitBuddy | Admin Dashboard</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<div class="container">
+  <div class="topbar"><a href="/">← Home</a></div>
+  <div class="card">
+    <div class="badge">ADMIN DASHBOARD</div>
+    <h1>Registered Users & Plans</h1>
+    {% if records %}
+    <div class="table-wrap">
+    <table>
+      <tr><th>Name</th><th>Age</th><th>Weight</th><th>Goal</th><th>Intensity</th><th>Created</th></tr>
+      {% for r in records %}
+      <tr>
+        <td>{{ r.name }}</td><td>{{ r.age }}</td><td>{{ r.weight }} kg</td>
+        <td>{{ r.goal }}</td><td>{{ r.intensity }}</td><td>{{ r.created_at }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    </div>
+    {% else %}<p>No plans generated yet.</p>{% endif %}
+  </div>
+</div>
+</body>
+</html>

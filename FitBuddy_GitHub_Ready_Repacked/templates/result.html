@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+  <title>FitBuddy | Your Plan</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<div class="container">
+  <div class="topbar"><a href="/">← New Plan</a><a href="/admin">Admin Dashboard</a></div>
+
+  <div class="card">
+    <div class="badge">PERSONALIZED PLAN</div>
+    <h1>Hello, {{ record.name }} 👋</h1>
+    <p><b>Goal:</b> {{ record.goal }} &nbsp; <b>Intensity:</b> {{ record.intensity }}</p>
+  </div>
+
+  {% if updated %}<div class="success">Your plan was updated using your feedback.</div>{% endif %}
+
+  <div class="card">
+    <h2>🏋️ 7-Day Workout Plan</h2>
+    <pre>{{ record.workout_plan }}</pre>
+  </div>
+
+  <div class="card">
+    <h2>🥗 Nutrition / Recovery Tip</h2>
+    <p>{{ record.nutrition_tip }}</p>
+  </div>
+
+  <div class="card">
+    <h2>🔄 Update Your Plan</h2>
+    <form method="post" action="/update/{{ record.id }}">
+      <label>Feedback</label>
+      <textarea name="feedback" placeholder="Example: Add more cardio and include an extra recovery day." required></textarea>
+      <button type="submit">Regenerate Plan</button>
+    </form>
+  </div>
+
+  <p class="disclaimer">Stop if you experience pain or feel unwell. This application provides general information.</p>
+</div>
+</body>
+</html>
