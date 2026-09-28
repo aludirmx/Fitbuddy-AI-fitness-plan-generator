@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.venv/
+fitbuddy-env/
+.env
+fitbuddy.db

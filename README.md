@@ -1,2 +1,7 @@
-# Fitbuddy-AI-fitness-plan-generator
-AI-powered fitness plan generator using google gemini,FastAPI,and sqlite.Generates personalised workout plans and nutrition recommandations based on user fitness goals
+# FitBuddy – AI Fitness Plan Generator using Gemini Models
+
+FastAPI + Gemini + SQLite project. See docs/ for phase-wise submissions.
+
+Run: `uvicorn app.main:app --reload`
+
+Never commit `.env` or API keys.
